@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build-and-test:
-   - image: circleci/python:3.6.1
+   - image: python:3.7.3-stretch
      steps:
       - checkout
       - run: 
