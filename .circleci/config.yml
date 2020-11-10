@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  build-and-test:
+   - image: circleci/python:3.6.1
+     steps:
+      - checkout
+      - run: 
+          name: Build it 
+          command:  |
+                python3 -m venv python-build
+                . python-build/bin/activate
+                make install
+
+      - run:
+         name: Test it 
+         command: |
+                . python-build/bin/activate
+                make lint
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
