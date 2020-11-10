@@ -8,13 +8,13 @@ jobs:
           name: Build it 
           command:  |
                 python3 -m venv python-build
-                . python-build/bin/activate
+                source python-build/bin/activate
                 make install
 
       - run:
          name: Test it 
          command: |
-                . python-build/bin/activate
+                source python-build/bin/activate
                 make lint
 
 workflows:
