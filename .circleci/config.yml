@@ -2,6 +2,9 @@ version: 2.1
 jobs:
   build-and-test:
    - image: python:3.7.3-stretch
+   
+     working_directory: ~/repo
+   
      steps:
       - checkout
       - restore_cache:
